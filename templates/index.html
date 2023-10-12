@@ -2,9 +2,106 @@
 
 {% block head %}
 <title>Task Master</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+
+    .content{
+        
+        margin-top:10%;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        padding : 20px;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        padding:
+        
+    }
+
+    table{
+        border:none;
+        width: 100%;
+         
+    }
+
+    tr{
+       
+
+    }
+
+    td{
+        border:none;
+        text-align : left;
+        padding : 10px;
+    }
+
+
+    td:hover{
+        background-color : rgba(1,1,1,0.3);
+        color : white;
+        padding : 10px;
+    }
+
+
+    th{
+        border: none;
+        background-color : rgba(1,1,1,0.3);
+        color : white;
+        padding : 10px;
+        border-radius : 10px;
+
+
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        
+    }
+
+    i{
+        text-align : center;
+        font-size : 25px;
+        margin-left : 25px;
+    }
+
+    input{
+        padding:15px;
+        margin-top : 20px;
+        background-color : rgba(1,1,1,0.3);
+        border:none;
+        color : white;
+        border-radius: 10px;
+    }
+
+    .box{
+        
+        width : 60%;
+        
+    }
+
+    .bttn{
+        width:30%;
+    }
+    .bttn:hover{
+
+        color:white;
+        background : rgba(0,255,0,0.5);
+
+    }
+
+
+
+
+</style>
+
+
+
 {% endblock %}
 
 {% block body %}
+
 
     <div class= "content"> 
         <h1 style="text-align: center">Task Master </h1>
@@ -23,16 +120,20 @@
                     <td>{{ task.content }}</td>
                     <td>{{ task.date_created.date()  }}</td>
                     <td>
-                        <a href ="delete/{{task.id}}">Delete</a>
-                        <br>
-                        <a href ="update/{{task.id}}">Update</a>
+                        <a href ="delete/{{task.id}}">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                    
+                        <a href ="update/{{task.id}}">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </a>
                 </tr>
                 {% endfor %}
         </table>
 {% endif %}
         <form action="/", method="POST">
-            <input type ="text" name ='content'  id = 'content' placeholder = "Enter a new task">
-            <input type ="submit" value = "Add Task">
+            <input class="box" type ="text" name ='content'  id = 'content' placeholder = "Enter a new task">
+            <input class="bttn " type ="submit" value = "Add Task">
         </form>
     </div>
 {% endblock %}

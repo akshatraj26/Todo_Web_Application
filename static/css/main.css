@@ -26,22 +26,26 @@ td{
 body, html {
     margin: 0;
     font-family: sans-serif;
-    background-color: lightblue;
+    background: linear-gradient(to right, #00af7d, #15002c);
 }
-
+form{
+    padding: 20px;
+    border-radius: 4px;
+}
 .content {
     margin: 0 auto;
-    width: 400px;
+    width: 600px;
+  
+    border: 40px;
+    border-radius: solid;
+    border-width: medium;
 }
 
 table, td, th {
     border: 1px solid #aaa;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
+
 
 th {
     height: 30px;
@@ -56,6 +60,3 @@ td {
     margin-top: 20px;
 }
 
-#content {
-    width: 70%;
-}
