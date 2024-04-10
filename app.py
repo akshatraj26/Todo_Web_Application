@@ -18,6 +18,7 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Task %r>' % self.id
 
+
 @app.route('/', methods= ['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -63,4 +64,4 @@ def update(id):
 
 
 if __name__ == "__main__": 
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
